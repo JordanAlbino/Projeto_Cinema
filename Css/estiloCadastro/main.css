@@ -1,61 +1,33 @@
-#div-primeiro-texto {
-    height: 110px;
-}
-
-#div-segundo-texto {
-    height: 120px;
-}
-
-.titulos {
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+main{
+    display: flex;
+    position: relative;
 }
 
 .input {
-    margin-bottom: 5px;
     width: 600px;
     height: 25px;
-    border-radius: 5px ;
     padding: 10px;
     background-color: #D9D9D9;
-    border: 3px solid white;
+    border: 3px solid ;
+    margin-bottom: 20px ;
 }
 
 .titulo-input {
-    font-size: 17px;
+    font-size: 20px;
+    color: white;
 } 
 
-.botao {
-    display: block;
-    font-size: 18px;
-    border-radius: 10px;
-    padding: 10px;
-    height: 50px;  
-    background-color: #D9D9D9;
-    font-family: Arial, Helvetica, sans-serif;
-    border: none;
+#caixasInformacao{
+    position: relative;
+    top: -150px;
 }
 
-#descricao-primeiro-texto {
-    width: 620px;
-    height: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+.descricao{
+    font-size: 23px;
+    color: white;
 }
 
-.descricao-segundo-texto {
-    width: 620px;
-    height: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.div-mostrar-senha {
-    display: flex;
-    align-items: center;
-}
-
-.img-olho:hover {
-    cursor: pointer;
+#Texto{
+    top: -130px;
+    position: relative;
 }
