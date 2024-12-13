@@ -38,6 +38,7 @@ main {
     justify-content: center;
     background-color: #575555;
     flex: 1;
+    height: 100px;
 }
 
 a {
