@@ -70,11 +70,7 @@ header {
     position: relative;
 }
 
-#lupa {
-    height: 35px;
-    cursor: pointer;
-    position: relative;
-}
+
 iframe {
     width: 100%;
     height: 1200px;
