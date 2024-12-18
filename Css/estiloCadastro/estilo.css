@@ -5,40 +5,11 @@
     overflow: hidden;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000000;
-    box-shadow: 1px 1px 10px black;
-    z-index: 1;
-}
-
-footer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FCA313;
-    box-shadow: 1px 1px 10px black;
-    z-index: 1;
-}
-
 body {
     display: flex;
     flex-direction: column;
-    min-height: 1200px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    background-color: #575555;
-    flex: 1;
-    height: 100px;
+    height: 100dvh;
+    
 }
 
 a {
