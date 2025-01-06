@@ -1,0 +1,110 @@
+body{
+    background-color: #8b0d1c;
+}
+.highlights {
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background-color: #8b0d1c;
+  }
+  
+  .highlight-title {
+    background: white;
+    color: black;
+    padding: 10px;
+    margin: 10px auto;
+    display: inline-block;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .arrow.left {
+    left: 10px;
+  }
+  
+  .arrow.right {
+    right: 10px;
+  }
+  
+  .dots {
+    margin-top: 10px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  /* Sessões */
+  .sessions {
+    padding: 20px;
+  }
+  
+  .sessions h2 {
+    background: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .card {
+    background: rgb(222, 46, 46);
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    width: 20%;
+  }
+
+  .highlight {
+    display: none;
+    text-align: center;
+  }
+  
+  .highlight.active {
+    display: block;
+  }
+  
+  .highlight img {
+    width: 250px;
+    border-radius: 10px;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .dot.active {
+    background: rgb(134, 19, 19);
+  } 
+
+  .card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
