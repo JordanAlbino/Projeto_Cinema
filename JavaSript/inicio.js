@@ -1,7 +1,7 @@
 const API_URL = "https://api.themoviedb.org/3";
 const TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjdkNGQxYjdjYmQwYzI2NWU0MTliMzk5Y2I4OGMxOSIsInN1YiI6IjY2Mzk1ZWI5MmZhZjRkMDEyYWM2OTBmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pSD_4lowFkWaHyOhHE1_4hu5ht9c24Oc-KzVIjI_zO0";
 
-// Configuração de autenticação
+
 const options = {
   method: "GET",
   headers: {
@@ -10,7 +10,7 @@ const options = {
   },
 };
 
-// Função para buscar filmes em destaque
+
 async function getFeaturedMovies() {
   try {
     const response = await fetch(`${API_URL}/movie/now_playing?language=pt-BR`, options);
@@ -21,7 +21,7 @@ async function getFeaturedMovies() {
   }
 }
 
-// Função para exibir filmes em destaque
+
 function displayFeaturedMovies(movies) {
   const highlightsContainer = document.querySelector(".highlights");
   const dotsContainer = document.querySelector(".dots");
@@ -61,11 +61,11 @@ async function getSessionMovies() {
   }
 }
 
-// Função para exibir filmes para sessões
+
 function displaySessionMovies(movies) {
   const cardsContainer = document.querySelector(".cards");
 
-  // Limpar conteúdo existente
+  
   cardsContainer.innerHTML = "";
 
   movies.slice(0, 4).forEach((movie) => {
@@ -115,7 +115,7 @@ async function getMovieTrailer(movieId) {
   
       if (trailer) {
         const trailerUrl = `https://www.youtube.com/watch?v=${trailer.key}`;
-        window.open(trailerUrl, "_blank"); // Abrir o trailer em uma nova aba
+        window.open(trailerUrl, "_blank"); 
       } else {
         alert("Trailer não disponível para este filme.");
       }
@@ -125,7 +125,7 @@ async function getMovieTrailer(movieId) {
     }
   }
   
-  // Adicionar evento de clique nos cartazes para abrir o trailer
+  
   function setupTrailerLinks() {
     const cards = document.querySelectorAll(".card");
   
@@ -137,7 +137,7 @@ async function getMovieTrailer(movieId) {
     });
   }
   
-  // Atualizar a função de exibição de filmes para incluir o ID do filme
+  
   function displaySessionMovies(movies) {
     const cardsContainer = document.querySelector(".cards");
   
@@ -147,7 +147,7 @@ async function getMovieTrailer(movieId) {
     movies.slice(0, 4).forEach((movie) => {
       const card = document.createElement("div");
       card.className = "card";
-      card.dataset.movieId = movie.id; // Adicionar o ID do filme como atributo
+      card.dataset.movieId = movie.id; 
       card.innerHTML = `
         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
         <h3>${movie.title}</h3>
@@ -156,9 +156,9 @@ async function getMovieTrailer(movieId) {
       cardsContainer.appendChild(card);
     });
   
-    setupTrailerLinks(); // Configurar links para os trailers
+    setupTrailerLinks(); 
   }
 
-// Chamar funções ao carregar a página
+
 getFeaturedMovies();
 getSessionMovies();
