@@ -65,6 +65,7 @@ body{
   .cards {
     display: flex;
     justify-content: space-around;
+    overflow: hidden;
   }
   
   .card {

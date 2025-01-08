@@ -1,0 +1,119 @@
+body{
+    background-color: black;
+}
+
+#cont{
+    display: flex;
+}
+
+.esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #8b0d1c;
+    height: 50rem;
+    width: 30vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.capaFilme{
+    border-radius: 15px;
+    background-color: black;
+    height: 75%;
+    width: 90%;
+}
+
+.back{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    width: 70px
+}
+
+.back:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+
+
+.direita {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #8b0d1c;
+    height: 50rem;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.trailer{
+    background-color: black;
+    height: 400px;
+    width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.descricao{
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    height: 150px;
+    width: 650px;
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+}
+
+.salas{
+    display: flex;
+    gap: 23px;
+    color: white;
+}
+
+.sala1{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 145px;
+    border-radius: 15px;
+}
+
+.sala2{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 145px;
+    border-radius: 15px;
+}
+
+.sala3{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 145px;
+    border-radius: 15px;
+}
+
+.sala4{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 145px;
+    border-radius: 15px;
+}

@@ -126,13 +126,13 @@ async function getMovieTrailer(movieId) {
   }
   
   
-  function setupTrailerLinks() {
+  function setupCardLinks() {
     const cards = document.querySelectorAll(".card");
   
     cards.forEach((card) => {
       card.addEventListener("click", () => {
         const movieId = card.dataset.movieId;
-        getMovieTrailer(movieId);
+        window.location.href = `desc_filmes.html?movieId=${movieId}`;
       });
     });
   }
@@ -156,7 +156,7 @@ async function getMovieTrailer(movieId) {
       cardsContainer.appendChild(card);
     });
   
-    setupTrailerLinks(); 
+    setupCardLinks(); 
   }
 
 
