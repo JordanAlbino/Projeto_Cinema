@@ -164,3 +164,5 @@ async function getMovieTrailer(movieId) {
 
 getFeaturedMovies();
 getSessionMovies();
+
+//gfgsdgdfgsdgs
