@@ -1,5 +1,6 @@
 body{
     background-color: #8b0d1c;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .highlights {
     text-align: center;
@@ -90,8 +91,10 @@ body{
   }
   
   .highlight img {
-    width: 600px;
+    width: 70%;
+    height: 500px;
     border-radius: 10px;
+    box-shadow: 10px 10px 5px rgb(0, 0, 0,0.3);
   }
   
   .card img {

@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #cont{
@@ -15,6 +16,7 @@ body{
     width: 30vw;
     justify-content: center;
     align-items: center;
+    
 }
 
 .capaFilme{
@@ -25,18 +27,25 @@ body{
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+    
 }
 
 .back{
     background-color: black;
+    border: 0;
     color: white;
-    border-radius: 15px;
-    width: 70px
+    border-radius: 5px;
+    height: 30px;
+    align-items: center;
+    width: 70px;
+    transition: all 0.3s;
 }
 
 .back:hover{
     cursor: pointer;
     opacity: 0.9;
+    width: 90px;
+  
 }
 
 
@@ -70,12 +79,15 @@ body{
     border-radius: 15px;
     overflow: hidden;
     color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .salas{
     display: flex;
     gap: 23px;
     color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
 }
 
 .sala1{
