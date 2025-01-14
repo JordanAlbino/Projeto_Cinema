@@ -23,6 +23,7 @@ async function getFeaturedMovies() {
 
 
 function displayFeaturedMovies(movies) {
+  console.log(movies)
   const highlightsContainer = document.querySelector(".highlights");
   const dotsContainer = document.querySelector(".dots");
 
@@ -33,7 +34,8 @@ function displayFeaturedMovies(movies) {
     const movieDiv = document.createElement("div");
     movieDiv.className = "highlight";
     movieDiv.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+      <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path
+      }" alt="${movie.title}">
       <h3>${movie.title}</h3>
     `;
 
