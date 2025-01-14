@@ -61,9 +61,10 @@ body{
 }
 
 .descricao{
-    background-color: black;
+    background-color: rgb(66, 63, 63);
     padding: 10px;
     display: flex;
+    align-items: center;
     height: 150px;
     width: 650px;
     border-radius: 15px;
@@ -78,7 +79,7 @@ body{
 }
 
 .sala1{
-    background-color: black;
+    background-color: rgb(66, 63, 63);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +90,7 @@ body{
 }
 
 .sala2{
-    background-color: black;
+    background-color: rgb(66, 63, 63);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +101,7 @@ body{
 }
 
 .sala3{
-    background-color: black;
+    background-color: rgb(66, 63, 63);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,7 +112,7 @@ body{
 }
 
 .sala4{
-    background-color: black;
+    background-color: rgb(66, 63, 63);
     display: flex;
     flex-direction: column;
     justify-content: center;

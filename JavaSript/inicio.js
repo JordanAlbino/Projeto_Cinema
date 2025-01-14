@@ -34,7 +34,6 @@ function displayFeaturedMovies(movies) {
     movieDiv.className = "highlight";
     movieDiv.innerHTML = `
       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-      <h3>${movie.title}</h3>
     `;
 
     if (index === 0) movieDiv.classList.add("active");

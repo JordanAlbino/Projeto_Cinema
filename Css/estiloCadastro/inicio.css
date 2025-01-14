@@ -5,7 +5,10 @@ body{
     text-align: center;
     position: relative;
     padding: 20px;
-    background-color: #8b0d1c;
+    background-image: url("https://www.liveenhanced.com/wp-content/uploads/2019/12/7-Ambiance.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: repeat-x;
   }
   
   .highlight-title {
@@ -87,7 +90,7 @@ body{
   }
   
   .highlight img {
-    width: 250px;
+    width: 600px;
     border-radius: 10px;
   }
   

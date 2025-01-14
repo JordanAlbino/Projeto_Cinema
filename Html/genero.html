@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes em Cartaz</title>
+    <link rel="stylesheet" href="../Css/estiloCadastro/header.css">
+    <link rel="stylesheet" href="../Css/estiloCadastro/genero.css">
+    <link rel="stylesheet" href="../Css/estiloCadastro/footer.css">
+   
+</head>
+<body>
+    <header>
+        <div id="ConteinerBotao">
+            <div class="divBotao">
+                <button id="button1" class="buttonHeader">Filmes</button>
+            </div>
+            <div class="divBotao">
+                <a href=""><button id="button2" class="buttonHeader">Login</button></a>
+            </div>
+        </div>
+        <div id="DivLogo">
+            <a href=""><img class="LogoBilhete" src="./imagens/ingresso-de-filme.png"></a>
+        </div>
+        <div id="Busca">
+            <input type="text" class="buscar" id="barra-busca" required>
+            <img class="buscar" id="lupa" src="./imagens/lupa.png">
+        </div>
+    </header>
+
+    <main>
+        <h1>FILMES EM CARTAZ</h1>
+
+        <div class="genre">
+            <label for="genre-select">GÊNERO</label>
+            <select id="genre-select">
+                <option value="">Selecione</option>
+                <option value="acao">Ação</option>
+                <option value="comedia">Comédia</option>
+                <option value="drama">Drama</option>
+            </select>
+        </div>
+
+        <div class="movie-list">
+            <div class="movie-card">CARTAZ</div>
+            <div class="movie-card">CARTAZ</div>
+            <div class="movie-card">CARTAZ</div>
+            <div class="movie-card">CARTAZ</div>
+        </div>
+
+        <button class="back-button">VOLTAR</button>
+    </main>
+    <footer>
+    <div id="divFooterAll">
+        <div id="divBomboniere" class="eachDiv">
+            <p class="textoRodape">Bomboniere</p>
+           <a href="https://www.cinesystem.com.br/produtos-e-combos"><p>Produtos e Combos</p></a>
+           <a href="https://www.cinesystem.com.br/produtos-e-combos"><p>CineShake</p></a>
+           <a href="https://www.cinesystem.com.br/produtos-e-combos"><p>Vip</p></a>
+       </div>
+
+       <div id="divEmpresa" class="eachDiv">
+           <p class="textoRodape">Empresa</p>
+           <a href="https://www.kinoplex.com.br/empresa/fornecedores/"><p>Cadastro de Fornecedores</p></a>
+           <a href="https://www.kinoplex.com.br/empresa/fornecedores/"><p>Imprensa</p></a>
+           <a href="https://www.kinoplex.com.br/empresa/missao-visao-e-valores/"><p>Missão, Visão e Valores</p></a>
+           <a href="https://www.kinoplex.com.br/empresa/trabalhe-conosco/"><p>Trabalhe Conosco</p></a>
+       </div>
+
+       <div id="divIngresso" class="eachDiv">
+           <p class="textoRodape">Compre seu Ingresso</p>
+           <a href="https://www.cinesystem.com.br/filmes/em-cartaz"><p>Em Cartaz</p></a>
+           <a href="https://www.cinesystem.com.br/cinemas/files/termo-de-autorizacao-classificacao-indicativa.pdf"><p>Termo de Autorização</p></a>
+           <a href="https://www.cinesystem.com.br/promocoes"><p>Todas as Promoções </p></a>
+       </div>
+
+       <div id="divEventos" class="eachDiv">
+           <p class="textoRodape">Evento</p>
+           <a href="https://www.cinesystem.com.br/produtos/solucoes-corporativas"><p>Soluções Corporativas</p></a>
+           <a href="https://www.cinesystem.com.br/produtos/festa-no-cinema"><p>Festa no cinema</p></a>
+           <a href="https://www.cinesystem.com.br/produtos/cine-escola"><p>Cine Escola</p></a>
+       </div>
+      
+    </div>
+    <div class="rodape">
+        <p id="textoRodape">© 2024 ******. Todos os Direitos Reservados. </p>
+    </div>
+   </footer>
+
+</body>
+</html>
