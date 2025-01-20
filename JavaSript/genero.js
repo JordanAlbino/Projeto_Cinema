@@ -60,8 +60,7 @@ function displayMovies(movies) {
     return;
   }
 
-  // Limita os filmes a 4
-  const limitedMovies = movies.slice(0, 4);
+  const limitedMovies = movies.slice(0,4);
 
   limitedMovies.forEach((movie) => {
     const cartazDiv = document.createElement("div");
