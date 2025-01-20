@@ -68,32 +68,17 @@ function displayMovies(movies) {
 
     const movieImage = document.createElement("img");
     movieImage.src = `${IMG_BASE_URL}${movie.poster_path}`; // URL da imagem do filme
+    movieImage.alt = movie.title;
     
-
-    //const movieTitle = document.createElement("p");
-    //movieTitle.textContent = movie.title;
+    const movieTitle = document.createElement("p");
+    movieTitle.textContent = movie.title;
 
     cartazDiv.appendChild(movieImage);
+    cartazDiv.appendChild(movieTitle);
     container.appendChild(cartazDiv);
   });
 }
 
-async function getPopularMovies() {
-  try {
-    const response = await fetch(`${API_URL}/movie/popular?language=pt-BR`, options);
-    const data = await response.json();
-    displayMovies(data.results.slice(0, 4)); // Exibe apenas os 4 primeiros filmes
-  } catch (error) {
-    console.error("Erro ao buscar filmes populares:", error);
-  }
-}
-
-// Chama a função ao carregar a página
-document.addEventListener("DOMContentLoaded", () => {
-  getGenres(); // Popula o dropdown de gêneros
-  getPopularMovies(); // Exibe os filmes populares
-});
-
-
 // Inicializa o carregamento dos gêneros ao carregar a página
 document.addEventListener("DOMContentLoaded", loadGenres);
+
