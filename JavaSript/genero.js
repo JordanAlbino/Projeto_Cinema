@@ -69,7 +69,7 @@ function displayMovies(movies) {
     const movieImage = document.createElement("img");
     movieImage.src = `${IMG_BASE_URL}${movie.poster_path}`; // URL da imagem do filme
     movieImage.alt = movie.title;
-    
+
     const movieTitle = document.createElement("p");
     movieTitle.textContent = movie.title;
 
