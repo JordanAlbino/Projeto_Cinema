@@ -31,21 +31,19 @@ body{
 }
 
 .back{
-    background-color: black;
-    border: 0;
+    transition: transform 0.2s ease-in-out;
+    border: none;
+    background-color: #5e040f;
     color: white;
-    border-radius: 5px;
-    height: 30px;
-    align-items: center;
-    width: 70px;
-    transition: all 0.3s;
+    border-radius: 15px;
+    width: 85px;
+    height: 25px;
 }
 
 .back:hover{
+    transform: scale(1.03);
     cursor: pointer;
-    opacity: 0.9;
-    width: 90px;
-  
+    background-color: #6e0310;
 }
 
 
@@ -70,66 +68,39 @@ body{
 }
 
 .descricao{
-    background-color: rgb(66, 63, 63);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+    background-color: #5e040f;
+    align-items: center;
     padding: 10px;
     display: flex;
-    align-items: center;
     height: 150px;
     width: 650px;
     border-radius: 15px;
     overflow: hidden;
     color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .salas{
     display: flex;
     gap: 23px;
     color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: italic;
+    overflow: hidden;
 }
 
-.sala1{
-    background-color: rgb(66, 63, 63);
+.sala1:hover, .sala2:hover, .sala3:hover, .sala4:hover, .descricao:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.sala1, .sala2, .sala3, .sala4{
+    transition: transform 0.2s ease-in-out;
+    background-color: #5e040f;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100px;
-    width: 145px;
-    border-radius: 15px;
-}
-
-.sala2{
-    background-color: rgb(66, 63, 63);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 145px;
-    border-radius: 15px;
-}
-
-.sala3{
-    background-color: rgb(66, 63, 63);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 145px;
-    border-radius: 15px;
-}
-
-.sala4{
-    background-color: rgb(66, 63, 63);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 145px;
+    width: 150px;
     border-radius: 15px;
 }
