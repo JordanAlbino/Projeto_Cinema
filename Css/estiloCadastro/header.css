@@ -12,7 +12,7 @@ header {
     background-color: #333; 
     color: white;
     z-index: 1;
-    box-shadow: 1px 1px 10px rgb(0, 0, 0,0.4);
+    box-shadow: 1px 1px 10px black
 }
 
 #DivLogo {
