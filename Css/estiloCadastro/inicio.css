@@ -1,117 +1,117 @@
 body{
-    background-color: #8b0d1c;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #8b0d1c;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .highlights {
-    text-align: center;
-    position: relative;
-    padding: 20px;
-    background-image: url("https://www.liveenhanced.com/wp-content/uploads/2019/12/7-Ambiance.jpg");
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: repeat-x;
-  }
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  background-image: url("https://www.liveenhanced.com/wp-content/uploads/2019/12/7-Ambiance.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: repeat-x;
+}
   
-  .highlight-title {
-    background: white;
-    color: black;
-    padding: 10px;
-    margin: 10px auto;
-    display: inline-block;
-  }
+.highlight-title {
+  background: white;
+  color: black;
+  padding: 10px;
+  margin: 10px auto;
+  display: inline-block;
+}
   
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    background: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
   
-  .arrow.left {
-    left: 10px;
-  }
+.arrow.left {
+  left: 10px;
+}
   
-  .arrow.right {
-    right: 10px;
-  }
+.arrow.right {
+  right: 10px;
+}
   
-  .dots {
-    margin-top: 10px;
-  }
+.dots {
+  margin-top: 10px;
+}
   
-  .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-  }
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
   
   /* Sessões */
-  .sessions {
-    padding: 20px;
-  }
+.sessions {
+  padding: 20px;
+}
   
-  .sessions h2 {
-    background: white;
-    color: black;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+.sessions h2 {
+  background: white;
+  color: black;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
   
-  .cards {
-    display: flex;
-    justify-content: space-around;
-    overflow: hidden;
-  }
+.cards {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
   
-  .card {
-    background: rgb(222, 46, 46);
-    color: black;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    width: 20%;
-  }
+.card {
+  background: rgb(222, 46, 46);
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 20%;
+}
 
-  .highlight {
-    display: none;
-    text-align: center;
-  }
+.highlight {
+  display: none;
+  text-align: center;
+}
   
-  .highlight.active {
-    display: block;
-  }
+.highlight.active {
+  display: block;
+}
   
-  .highlight img {
-    width: 70%;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px rgb(0, 0, 0,0.3);
-  }
+.highlight img {
+  width: 70%;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0,0.3);
+}
   
-  .card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
   
-  .dot.active {
-    background: rgb(134, 19, 19);
-  } 
+.dot.active {
+  background: rgb(134, 19, 19);
+} 
 
-  .card {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
+.card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
   
-  .card:hover {
-    transform: scale(1.05);
-  }
+.card:hover {
+  transform: scale(1.05);
+}

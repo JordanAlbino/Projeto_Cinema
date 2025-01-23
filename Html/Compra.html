@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/estiloCadastro/header.css">
+    <link rel="stylesheet" href="../Css/estiloCadastro/compra.css">
+    <link rel="stylesheet" href="../Css/estiloCadastro/footer.css">
+    <script src="../JavaSript/compra.js" defer></script>
+    <title>Compra</title>
+</head>
+<body>
+    <header>
+        <div id="ConteinerBotao">
+            <div class="divBotao">
+                <a href="../Html/genero.html"><button id="button1" class="buttonHeader">Filmes</button></a>
+            </div>
+            <div class="divBotao">
+                <a href="../Html/Cadastro.html"><button id="button2" class="buttonHeader">Login</button></a>
+            </div>
+        </div>
+        <div id="DivLogo">
+            <a href="../Html/Inicio.html"><img class="LogoBilhete" src="../imagens/ingresso-de-filme.png"></a>
+        </div>
+        <div id="Busca">
+            <input type="text" class="buscar" id="barra-busca" required>
+            <img class="buscar" id="lupa" src="../imagens/lupa.png">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+          <!-- Tela de Assentos -->
+          <div class="assento-container">
+            <div class="assentos">
+              <!-- Assentos serão gerados dinamicamente -->
+            </div>
+            <h3>Tela</h3>
+            <button class="voltar" onclick="voltar()">VOLTAR</button>
+        </div>
+        
+        <div class="parte-inferior">
+            <div class="detalhes">
+              <p>Classificação: <strong>18+</strong></p>
+              <p>Áudio: <strong>Dublado</strong></p>
+              <p>Sala: <strong>4</strong></p>
+            </div>
+            <div class="resumo">
+              <p>Itens: <span id="itens">0</span></p>
+              <p>Total: R$ <span id="total">0,00</span></p>
+            </div>
+        </div>
+    
+        <!-- Informações Laterais -->
+        <div class="info-lateral">
+        <!-- Parte superior com descrição e cartaz -->
+        <div class="parte-superior">
+          <div class="cartaz">
+            <h3>CARTAZ</h3>
+          </div>
+          <div class="descricao">
+            <h3>DESCRIÇÃO</h3>
+          </div>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <div id="divFooterAll">
+            <div id="divBomboniere" class="eachDiv">
+                <p class="textoRodape">Bomboniere</p>
+               <a href="https://www.cinesystem.com.br/produtos-e-combos"><p>Produtos e Combos</p></a>
+               <a href="https://www.cinesystem.com.br/produtos-e-combos"><p>CineShake</p></a>
+               <a href="https://www.cinesystem.com.br/produtos-e-combos"><p>Vip</p></a>
+           </div>
+   
+           <div id="divEmpresa" class="eachDiv">
+               <p class="textoRodape">Empresa</p>
+               <a href="https://www.kinoplex.com.br/empresa/fornecedores/"><p>Cadastro de Fornecedores</p></a>
+               <a href="https://www.kinoplex.com.br/empresa/fornecedores/"><p>Imprensa</p></a>
+               <a href="https://www.kinoplex.com.br/empresa/missao-visao-e-valores/"><p>Missão, Visão e Valores</p></a>
+               <a href="https://www.kinoplex.com.br/empresa/trabalhe-conosco/"><p>Trabalhe Conosco</p></a>
+           </div>
+   
+           <div id="divIngresso" class="eachDiv">
+               <p class="textoRodape">Compre seu Ingresso</p>
+               <a href="https://www.cinesystem.com.br/filmes/em-cartaz"><p>Em Cartaz</p></a>
+               <a href="https://www.cinesystem.com.br/cinemas/files/termo-de-autorizacao-classificacao-indicativa.pdf"><p>Termo de Autorização</p></a>
+               <a href="https://www.cinesystem.com.br/promocoes"><p>Todas as Promoções </p></a>
+           </div>
+   
+           <div id="divEventos" class="eachDiv">
+               <p class="textoRodape">Evento</p>
+               <a href="https://www.cinesystem.com.br/produtos/solucoes-corporativas"><p>Soluções Corporativas</p></a>
+               <a href="https://www.cinesystem.com.br/produtos/festa-no-cinema"><p>Festa no cinema</p></a>
+               <a href="https://www.cinesystem.com.br/produtos/cine-escola"><p>Cine Escola</p></a>
+           </div>
+          
+        </div>
+        <div class="rodape">
+            <p id="textoRodape">© 2024 ******. Todos os Direitos Reservados. </p>
+        </div>
+    </footer>
+</body>
+</html>
