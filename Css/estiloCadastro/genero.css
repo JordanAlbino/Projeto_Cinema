@@ -299,6 +299,10 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.cartaz:hover{
+    cursor: pointer;
+}
   
 .cartaz-container{
     display: flex;

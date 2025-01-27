@@ -34,17 +34,24 @@ async function getMovieDetails(movieId) {
     const descricaoDiv = document.querySelector(".descricao");
     descricaoDiv.innerHTML = `<p>${movie.overview || "Descrição não disponível."}</p>`;
 
-    // Preencher as salas
+    // Preencher as salas com links para "Compra.html"
     const salasDivs = document.querySelectorAll(".salas > div");
     salasDivs.forEach((sala, index) => {
       sala.innerHTML = `
         <p><strong>Sala ${index + 1}</strong></p>
         <p>Horário: ${18 + index}:00</p>
+        <button onclick="irParaCompra(${movieId}, ${index + 1})">Escolher Sala</button>
       `;
     });
   } catch (error) {
     console.error("Erro ao buscar detalhes do filme:", error);
   }
+}
+
+// Função para redirecionar para a página de compra
+function irParaCompra(movieId, salaId) {
+  const url = `compra.html?movieId=${movieId}&salaId=${salaId}`;
+  window.location.href = url;
 }
 
 // Função para recuperar o ID do filme da URL

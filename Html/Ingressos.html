@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/estiloCadastro/header.css">
-    <link rel="stylesheet" href="../Css/estiloCadastro/inicio.css">
-    <link rel="stylesheet" href="../Css/estiloCadastro/footer.css">
-    <script src="../JavaSript/inicio.js" defer></script>
-    <title>Cine Rua</title>
+    <link rel="stylesheet" href="../Css/estiloCadastro/Ingressos.css">
+    <link rel="stylesheet" href="/Css/estiloCadastro/header.css">
+    <link rel="stylesheet" href="/Css/estiloCadastro/footer.css">
+    <script src="../JavaSript/pagamento.js" defer></script>
+    <script></script>
+    <title>Ingressos</title>
 </head>
 <body>
+
     <header>
         <div id="ConteinerBotao">
             <div class="divBotao">
@@ -27,18 +29,48 @@
             <img class="buscar" id="lupa" src="../imagens/lupa.png">
         </div>
     </header>
-    <main class="main-content">
-        <section class="highlights">
-            <div class="dots"></div>
-          </section>
-    
-        <section class="sessions">
-            <h2>SESSÕES E DATAS</h2>
-            <div class="cards"></div> <!-- Aqui os filmes serão carregados -->
-          </section>
-      </main>
-      
-      <footer>
+
+
+    <div class="container">
+        <div class="esquerda">
+            <div id="payment-options">
+                <button id="credit-card" onclick="payWithCreditCard()">Ingresso Inteira</button>
+                <button id="debit-card" onclick="payWithDebitCard()">Ingresso Meia Estudande</button>
+        
+                <button id="pix" onclick="payWithPix()">Ticket</button>
+            </div>
+              
+            <div id="payment-container">
+                <h3 id="payment-method">Método Selecionado:</h3>
+                <div id="payment-details"></div>
+                <button id="confirm-payment" onclick="confirmPayment()">CONTINUAR</button>
+            </div>
+            <div id="payment-result"></div>
+        </div>
+
+        <div class="meio">
+            <div class="informacao">
+                <p>ITENS: <span>0</span></p>
+                <p>TOTAL: <span>R$ 0,00</span></p>
+            </div>
+        </div>
+
+        <div class="direita">
+            <div class="cartaz">
+
+            </div>
+
+            <div class="descricao">
+
+            </div>
+
+            <div class="botao">
+                <button class="botaoConfirmar">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
         <div id="divFooterAll">
             <div id="divBomboniere" class="eachDiv">
                 <p class="textoRodape">Bomboniere</p>
@@ -74,8 +106,5 @@
             <p id="textoRodape">© 2024 ******. Todos os Direitos Reservados. </p>
         </div>
        </footer>
-        
-
-
 </body>
 </html>
