@@ -77,10 +77,8 @@ function selecionarAssento(assento) {
 
 function atualizarResumo() {
   const selecionados = document.querySelectorAll(".assento.selecionado").length;
-  const total = selecionados * 20; // Supondo que cada assento custa R$20,00
 
   document.getElementById("itens").textContent = selecionados;
-  document.getElementById("total").textContent = total.toFixed(2);
 }
 
 function voltar() {
@@ -88,4 +86,15 @@ function voltar() {
 }
 
 gerarAssentos();
+
+function redirecionarParaIngressos() {
+  const params = new URLSearchParams(window.location.search);
+  const movieId = params.get("movieId");
+  const salaId = params.get("salaId");
+  if (movieId && salaId) {
+      window.location.href = `ingresso.html?movieId=${movieId}&salaId=${salaId}`;
+  } else {
+      console.error("Parâmetros de filme ou sala não encontrados!");
+  }
+}
 

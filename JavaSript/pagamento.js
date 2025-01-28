@@ -18,6 +18,18 @@ function showPaymentForm(method, detailsHTML) {
   selectedPaymentMethod = method;
 }
 
+window.onload = function() {
+  const totalItens = localStorage.getItem("totalItens");
+  const totalValor = localStorage.getItem("totalValor");
+
+  if (totalItens && totalValor) {
+      document.getElementById("detalhes").innerHTML = `
+          <p>ITENS: ${totalItens}</p>
+          <p>TOTAL: R$ ${totalValor}</p>
+      `;
+  }
+}
+
 function payWithCreditCard() {
   showPaymentForm(
     "Cartão de Crédito",
