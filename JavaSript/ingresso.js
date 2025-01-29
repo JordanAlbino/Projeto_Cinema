@@ -1,6 +1,5 @@
 const API_URL = "https://api.themoviedb.org/3";
 const TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjdkNGQxYjdjYmQwYzI2NWU0MTliMzk5Y2I4OGMxOSIsInN1YiI6IjY2Mzk1ZWI5MmZhZjRkMDEyYWM2OTBmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pSD_4lowFkWaHyOhHE1_4hu5ht9c24Oc-KzVIjI_zO0"; 
-
 const options = {
     method: "GET",
     headers: {
@@ -94,17 +93,3 @@ function redirecionarParaPagamento() {
     // Redirecionar para a página pagamento.html
     window.location.href = "pagamento.html";
 }
-
-window.onload = function() {
-    // Recuperar os dados do localStorage
-    const tituloFilme = localStorage.getItem("tituloFilme");
-    const descricaoFilme = localStorage.getItem("descricaoFilme");
-    const cartazFilme = localStorage.getItem("cartazFilme");
-
-    // Exibir as informações na página (substitua pelos IDs corretos)
-    if (tituloFilme && descricaoFilme && cartazFilme) {
-        document.getElementById("titulo-filme").textContent = tituloFilme;
-        document.getElementById("descricao-filme").textContent = descricaoFilme;
-        document.getElementById("cartaz-filme").src = cartazFilme;
-    }
-};

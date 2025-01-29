@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/estiloCadastro/header.css">
-    <link rel="stylesheet" href="../Css/estiloCadastro/inicio.css">
-    <link rel="stylesheet" href="../Css/estiloCadastro/footer.css">
-    <script src="../JavaSript/inicio.js" defer></script>
-    <title>Cine Rua</title>
+    <link rel="stylesheet" href="../Css/estiloCadastro/Ingressos.css">
+    <link rel="stylesheet" href="/Css/estiloCadastro/header.css">
+    <link rel="stylesheet" href="/Css/estiloCadastro/footer.css">
+    <script src="../JavaSript/ingresso.js" defer></script>
+    <script></script>
+    <title>Ingressos</title>
 </head>
 <body>
+
     <header>
         <div id="ConteinerBotao">
             <div class="divBotao">
@@ -27,17 +29,31 @@
             <img class="buscar" id="lupa" src="../imagens/lupa.png">
         </div>
     </header>
-    <main class="main-content">
-        <section class="highlights">
-            <div class="dots"></div>
-        </section>
-    
-        <section class="sessions">
-            <h2>SESSÕES E DATAS</h2>
-            <div class="cards"></div> <!-- Aqui os filmes serão carregados -->
-        </section>
-    </main>
-      
+
+
+    <div class="container">
+        <div class="esquerda">
+            <div id="payment-options">
+                <button id="credit-card" onclick="addIngressoInteira()">Ingresso Inteira</button>
+                <button id="debit-card" onclick="addIngressoMeia()">Ingresso Meia Estudante</button>
+                <div class="informacao">
+                    <p>ITENS: <span id="itens">0</span></p>
+                    <p>TOTAL: <span id="total">R$ 0,00</span></p>
+                </div>
+            
+                <button id="pix" onclick="redirecionarParaPagamento()">Ticket</button>
+            </div>
+            <div class="botao">
+                <button class="botaoConfirmar">Confirmar</button>
+            </div>
+        </div>
+
+        <div class="direita">
+            <div class="cartaz"></div>
+            <div class="descricao"></div>
+        </div>
+    </div>
+
     <footer>
         <div id="divFooterAll">
             <div id="divBomboniere" class="eachDiv">
@@ -73,9 +89,6 @@
         <div class="rodape">
             <p id="textoRodape">© 2024 ******. Todos os Direitos Reservados. </p>
         </div>
-    </footer>
-        
-
-
+       </footer>
 </body>
 </html>

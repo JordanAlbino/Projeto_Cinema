@@ -5,6 +5,7 @@ body{
 
 .container{
     display: flex;
+    justify-content: space-evenly;
 }
 
 .esquerda{
@@ -139,22 +140,28 @@ body{
     justify-content: center;
     align-items: center;
     gap: 15px;
-    height: 50rem;
-    width: 40vw;
+    width: 600px;
 }
 
 .cartaz{
-    background-color: rgb(245, 245, 245);
     border-radius: 15px;
-    height: 30vw;
-    width: 20vw;
+    height: 70vh;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .descricao{
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-    height: 5vw;
-    width: 35vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* height: 5vw; */
+    padding: 10px;
+    width: 600px;
 }
 
 .botaoConfirmar{
