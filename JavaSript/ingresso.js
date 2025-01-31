@@ -24,7 +24,7 @@ async function getMovieDetails(movieId) {
         const movie = await response.json();
 
         // Atualizar a descrição e o cartaz na página
-        document.querySelector(".cartaz").style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+        document.querySelector(".cartaz").innerHTML = `<img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />`;
         document.querySelector(".descricao").innerHTML = `<p>${movie.overview || "Descrição não disponível."}</p>`;
     } catch (error) {
         console.error("Erro ao buscar detalhes do filme:", error);
