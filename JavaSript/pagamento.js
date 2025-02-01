@@ -1,3 +1,52 @@
+const API_URL = "https://api.themoviedb.org/3";
+const TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjdkNGQxYjdjYmQwYzI2NWU0MTliMzk5Y2I4OGMxOSIsInN1YiI6IjY2Mzk1ZWI5MmZhZjRkMDEyYWM2OTBmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pSD_4lowFkWaHyOhHE1_4hu5ht9c24Oc-KzVIjI_zO0"; 
+const options = {
+    method: "GET",
+    headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "application/json;charset=utf-8",
+    },
+};
+
+
+
+
+
+async function getMovieDetails(movieId) {
+  try {
+      const response = await fetch(`${API_URL}/movie/${movieId}?language=pt-BR`, options);
+      const movie = await response.json();
+
+      // Atualizar a descrição e o cartaz na página
+      document.querySelector(".cartaz").innerHTML = `<img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />`;
+      document.querySelector(".descricao").innerHTML = `<p>${movie.overview || "Descrição não disponível."}</p>`;
+  } catch (error) {
+      console.error("Erro ao buscar detalhes do filme:", error);
+  }
+}
+
+function init() {
+  const { movieId } = getParamsFromURL();
+  if (movieId) {
+      getMovieDetails(movieId);
+  } else {
+      console.error("ID do filme não encontrado na URL.");
+  }
+}
+
+init(); 
+
+
+function getParamsFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+      movieId: params.get("movieId"),
+      salaId: params.get("salaId"),
+  };
+}
+
+
+
 // Variável para armazenar o método de pagamento selecionado
 let selectedPaymentMethod = "";
 
@@ -106,3 +155,5 @@ function confirmPayment() {
   result.innerHTML = `<p>Pagamento realizado com sucesso pelo método: <strong>${selectedPaymentMethod}</strong>.</p>`;
   alert("Pagamento confirmado!");
 }
+
+

@@ -139,29 +139,33 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    width: 600px;
+    gap: 5px;
+    width: 700px;
+    height: 1100px;
 }
 
 .cartaz{
-    border-radius: 15px;
-    height: 70vh;
-    width: 350px;
+    height: 700px;
+    width: 500px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .descricao{
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
+    background-color: #444;
+    padding: 20px;
     text-align: center;
-    /* height: 5vw; */
-    padding: 10px;
-    width: 600px;
+    border-radius: 5px;
+    width: 90%;
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+    color:#fff;
+
 }
 
 .botaoConfirmar{

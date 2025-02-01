@@ -1,0 +1,95 @@
+body{
+    background-color: #700f02;
+}
+
+.container{
+    display: flex;
+}
+
+.esq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vw;
+    width: 50vw;
+}
+
+.contEsq{
+    border: black solid 2px;
+    border-radius: 15px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 40vw;
+    width: 30vw;
+    background-color: rgb(164, 164, 164);
+}
+
+.contInfo{
+    height: 17vw;
+    width: 25vw;
+    background-color: rgb(255, 255, 255);
+    border: solid black 3px;
+    border-radius: 15px;
+}
+
+
+
+.cont2{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    height: 17vw;
+    width: 25vw;
+}
+
+.cartazIngresso{
+    border: black solid 3px;
+    border-radius: 15px;
+    height: 14vw;
+    width: 10vw;
+    background-color: rgb(255, 255, 255);
+}
+
+.descIngresso{
+    border: black solid 3px;
+    border-radius: 15px;
+    height: 10vw;
+    width: 17vw;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+
+.dir{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vw;
+    width: 50vw;
+}
+
+.contCartaz{
+    border: black solid 2px;
+    border-radius: 15px;
+    border-radius: 15px;
+    height: 30vw;
+    width: 20vw;
+    background-color: rgb(255, 255, 255);
+}
+
+.contDesc{
+    border: black solid 2px;
+    border-radius: 15px;
+    border-radius: 15px;
+    height: 7vw;
+    width: 27vw;
+    background-color: rgb(255, 255, 255);
+}
