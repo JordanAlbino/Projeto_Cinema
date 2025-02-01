@@ -21,6 +21,8 @@ function showPaymentForm(method, detailsHTML) {
 window.onload = function() {
   const totalItens = localStorage.getItem("totalItens");
   const totalValor = localStorage.getItem("totalValor");
+  const cartaz = localStorage.getItem("cartaz");
+  const descricao = localStorage.getItem("descricao");
 
   if (totalItens && totalValor) {
       document.getElementById("detalhes").innerHTML = `
@@ -28,7 +30,16 @@ window.onload = function() {
           <p>TOTAL: R$ ${totalValor}</p>
       `;
   }
-}
+
+  // Verifica se tem dados da imagem e da descrição
+  if (cartaz) {
+      document.querySelector(".cartaz").style.backgroundImage = `url(${cartaz})`;
+  }
+  
+  if (descricao) {
+      document.querySelector(".descricao").innerHTML = `<p>${descricao}</p>`;
+  }
+};
 
 function payWithCreditCard() {
   showPaymentForm(

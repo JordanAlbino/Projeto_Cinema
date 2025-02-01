@@ -76,7 +76,6 @@ function addIngressoMeia() {
     atualizarTotal();
 }
 
-// Função para redirecionar para a página de pagamento
 function redirecionarParaPagamento() {
     const totalItens = quantidadeInteira + quantidadeMeia;
     const totalValor = (quantidadeInteira * PRECO_INTEIRA) + (quantidadeMeia * PRECO_MEIA);
@@ -86,10 +85,25 @@ function redirecionarParaPagamento() {
         return;
     }
 
-    // Armazenar os detalhes no localStorage para usar na próxima página
+    // Salvar detalhes da compra no localStorage
     localStorage.setItem("totalItens", totalItens);
     localStorage.setItem("totalValor", totalValor.toFixed(2));
 
-    // Redirecionar para a página pagamento.html
+    // Capturar a URL da imagem do cartaz corretamente
+    const cartazElement = document.querySelector(".cartaz");
+    const cartazBackground = cartazElement.style.backgroundImage;
+
+    // Extraindo apenas a URL correta da imagem
+    const cartazURL = cartazBackground.match(/url\("?(.*?)"?\)/);
+    const imagemURL = cartazURL ? cartazURL[1] : "";
+
+    // Capturar a descrição do filme
+    const descricao = document.querySelector(".descricao").innerText;
+
+    // Armazena os dados no localStorage
+    localStorage.setItem("cartaz", imagemURL);
+    localStorage.setItem("descricao", descricao);
+
+    // Redirecionar para a página de pagamento
     window.location.href = "pagamento.html";
 }
