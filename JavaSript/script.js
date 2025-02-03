@@ -19,14 +19,12 @@ document.getElementById("BtCriarConta").addEventListener("click", async (event) 
 
     try {
         // Enviar os dados ao back-end
-        const response = await fetch("http://localhost:8080/api/users", {
+        const response = await fetch("http://localhost:8080/api/clientes", { 
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData),
         });
-
+        
         if (!response.ok) {
             throw new Error("Erro ao criar conta. Verifique os dados e tente novamente.");
         }

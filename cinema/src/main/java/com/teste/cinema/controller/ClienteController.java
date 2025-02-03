@@ -41,14 +41,14 @@ public class ClienteController {
         return cliente.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PutMapping
+    @PutMapping("/{id}") 
     public ResponseEntity<Cliente> atualizaCliente(@PathVariable Long id, @RequestBody Cliente atualizarCliente) {
         Optional<Cliente> user = clienteService.atualizarCliente(id, atualizarCliente);
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
     
     @DeleteMapping("/{id}")
-    public void deletarCliente(Long id) {
-        clienteService.deletarCliente(id);
+    public void deletarCliente(@PathVariable Long id) { 
+    clienteService.deletarCliente(id);
     }
 }

@@ -115,3 +115,11 @@ body{
 .card:hover {
   transform: scale(1.05);
 }
+
+#barra-busca{
+  cursor: pointer;
+}
+
+#lupa{
+  cursor: pointer;
+}

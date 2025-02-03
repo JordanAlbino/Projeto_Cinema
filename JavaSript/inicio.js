@@ -165,4 +165,35 @@ async function getMovieTrailer(movieId) {
 getFeaturedMovies();
 getSessionMovies();
 
-//gfgsdgdfgsdgs
+document.getElementById("lupa").addEventListener("click", async () => {
+  const busca = document.getElementById("barra-busca").value.trim();
+
+  if (busca === "") {
+    alert("Digite o nome do filme!");
+    return;
+  }
+
+  const url = `${API_URL}/search/movie?query=${encodeURIComponent(busca)}&language=pt-BR`;
+
+  try {
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+      throw new Error("Erro ao buscar o filme");
+    }
+
+    const data = await response.json();
+
+    if (data.results.length > 0) {
+      const filme = data.results[0];
+
+      // Aqui você deve garantir que o parâmetro seja 'movieId', não 'id'
+      window.location.href = `desc_filmes.html?movieId=${filme.id}`;
+    } else {
+      alert("Filme não encontrado!");
+    }
+  } catch (error) {
+    console.error("Erro na busca:", error);
+    alert("Erro ao buscar o filme. Tente novamente!");
+  }
+});
