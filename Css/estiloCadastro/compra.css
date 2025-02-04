@@ -1,3 +1,8 @@
+main{
+    height: 1050px;
+    background-color: #8b0b1c
+}
+
 body{ 
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -11,6 +16,7 @@ body{
     background-color: #8b0d1c;
     color: #fff;
     align-items: center; 
+    overflow: hidden;
 }
 
 .assento-container {
@@ -77,10 +83,12 @@ body{
 }
 
 .info-lateral {
-    width: 500px;
+    width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    height: 1050px;
 }
 
 .cartaz{
@@ -91,6 +99,8 @@ body{
     justify-content: center;
     overflow: hidden;
     margin-bottom: 10px;
+    position: relative;
+    top: 50px;
 } 
 
 .descricao {
@@ -98,9 +108,10 @@ body{
     padding: 20px;
     text-align: center;
     border-radius: 5px;
-    margin: 20px;
     width: 90%;
     font-size: 20px;
+    position: relative;
+    top: 50px;
 }
 
 .voltar {
@@ -128,4 +139,10 @@ body{
     height: 50px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
     font-size: 17px;
+    position: relative;
+    top:70px;
+}
+
+.ingressor:hover {
+    background-color: #d32f2f;
 }

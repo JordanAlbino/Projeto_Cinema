@@ -1,5 +1,9 @@
+main{
+    height: 850px;
+    background-color: #8b0b1c
+}
+
 body{
-    background-color: black;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -13,31 +17,32 @@ body{
     gap: 15px;
     background-color: #8b0d1c;
     height: 50rem;
-    width: 30vw;
+    width: 40vw;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .capaFilme{
     border-radius: 15px;
     background-color: black;
     height: 75%;
-    width: 90%;
+    width: 450px;
     background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    
+    position: relative;
+    left: 10px;
 }
 
 .back{
-    transition: transform 0.2s ease-in-out;
+    background-color: #f44336;
+    color: #fff;
     border: none;
-    background-color: #5e040f;
-    color: white;
-    border-radius: 15px;
-    width: 85px;
-    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    top:-10px ;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
 .back:hover{
@@ -45,8 +50,6 @@ body{
     cursor: pointer;
     background-color: #6e0310;
 }
-
-
 
 .direita {
     display: flex;
@@ -62,13 +65,12 @@ body{
 .trailer{
     background-color: black;
     height: 400px;
-    width: 600px;
+    width: 660px;
     border-radius: 15px;
     overflow: hidden;
 }
 
 .descricao{
-    transition: transform 0.2s ease-in-out;
     text-align: center;
     background-color: #5e040f;
     align-items: center;
@@ -79,6 +81,7 @@ body{
     border-radius: 15px;
     overflow: hidden;
     color: white;
+    font-size: 20px;
 }
 
 .salas{

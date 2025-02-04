@@ -8,39 +8,6 @@ body{
   padding: 20px;
   background-image: url("https://www.liveenhanced.com/wp-content/uploads/2019/12/7-Ambiance.jpg");
   background-size: 100% 100%;
-  background-position: center;
-  background-repeat: repeat-x;
-}
-  
-.highlight-title {
-  background: white;
-  color: black;
-  padding: 10px;
-  margin: 10px auto;
-  display: inline-block;
-}
-  
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
-  background: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-  
-.arrow.left {
-  left: 10px;
-}
-  
-.arrow.right {
-  right: 10px;
-}
-  
-.dots {
-  margin-top: 10px;
 }
   
 .dot {
@@ -52,8 +19,7 @@ body{
   margin: 0 5px;
   cursor: pointer;
 }
-  
-  /* Sessões */
+
 .sessions {
   padding: 20px;
 }
@@ -114,12 +80,4 @@ body{
   
 .card:hover {
   transform: scale(1.05);
-}
-
-#barra-busca{
-  cursor: pointer;
-}
-
-#lupa{
-  cursor: pointer;
 }
