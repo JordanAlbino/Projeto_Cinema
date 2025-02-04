@@ -80,11 +80,12 @@ window.onload = function() {
       `;
   }
 
-  // Verifica se tem dados da imagem e da descrição
+ 
   if (cartaz) {
-      document.querySelector(".cartaz").style.backgroundImage = `url(${cartaz})`;
+      document.querySelector(".cartaz").innerHTML = `<img src="${cartaz}" alt="Cartaz do Filme" />`;
   }
   
+ 
   if (descricao) {
       document.querySelector(".descricao").innerHTML = `<p>${descricao}</p>`;
   }

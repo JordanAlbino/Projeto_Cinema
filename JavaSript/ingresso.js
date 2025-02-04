@@ -45,8 +45,8 @@ init();
 
 
 // Preços dos ingressos
-const PRECO_INTEIRA = 20.00; // Preço da Inteira
-const PRECO_MEIA = 10.00;    // Preço da Meia Estudante
+const PRECO_INTEIRA = 20.00; 
+const PRECO_MEIA = 10.00;    
 
 // Referências aos elementos
 const itensSpan = document.getElementById("itens");
@@ -85,25 +85,19 @@ function redirecionarParaPagamento() {
         return;
     }
 
-    // Salvar detalhes da compra no localStorage
+    
+    const cartazElement = document.querySelector(".cartaz img"); 
+    const imagemURL = cartazElement ? cartazElement.src : "";
+
+   
+    const descricao = document.querySelector(".descricao").innerText;
+
+    // Armazenando no localStorage
+    localStorage.setItem("cartaz", imagemURL);
+    localStorage.setItem("descricao", descricao);
     localStorage.setItem("totalItens", totalItens);
     localStorage.setItem("totalValor", totalValor.toFixed(2));
 
-    // Capturar a URL da imagem do cartaz corretamente
-    const cartazElement = document.querySelector(".cartaz");
-    const cartazBackground = cartazElement.style.backgroundImage;
-
-    // Extraindo apenas a URL correta da imagem
-    const cartazURL = cartazBackground.match(/url\("?(.*?)"?\)/);
-    const imagemURL = cartazURL ? cartazURL[1] : "";
-
-    // Capturar a descrição do filme
-    const descricao = document.querySelector(".descricao").innerText;
-
-    // Armazena os dados no localStorage
-    localStorage.setItem("cartaz", imagemURL);
-    localStorage.setItem("descricao", descricao);
-
     // Redirecionar para a página de pagamento
-    window.location.href = "pagamento.html";
+    window.location.href = "Pagamento.html";
 }
