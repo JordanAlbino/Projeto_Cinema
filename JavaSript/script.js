@@ -2,11 +2,11 @@ document.getElementById("BtCriarConta").addEventListener("click", async (event) 
     event.preventDefault(); // Prevenir o comportamento padrão do botão
 
     // Capturar os dados do formulário
-    const nome = document.getElementById("input-nome").value;
-    const cpf = document.getElementById("input-cpf").value;
-    const email = document.getElementById("input-email").value;
-    const telefone = document.getElementById("input-telefone").value;
-    const senha = document.getElementById("input-senha").value;
+const nome = document.getElementById("input-nome").value;
+const cpf = document.getElementById("input-cpf").value;
+const email = document.getElementById("input-email").value;
+const telefone = document.getElementById("input-telefone").value;
+const senha = document.getElementById("input-senha").value;
 
 // Função de validação do CPF (apenas exemplo simples)
 function validarCPF(cpf) {
@@ -28,10 +28,10 @@ function validarTelefone(telefone) {
 }
 
 // Validar os campos
-    if (!nome || !cpf || !email || !telefone || !senha) {
-        alert("Todos os campos são obrigatórios!");
-        return;
-    }
+if (!nome || !cpf || !email || !telefone || !senha) {
+    alert("Todos os campos são obrigatórios!");
+    return;
+}
 
 // Validar CPF
 if (!validarCPF(cpf)) {
