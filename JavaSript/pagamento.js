@@ -50,54 +50,42 @@ function getParamsFromURL() {
 // Variável para armazenar o método de pagamento selecionado
 let selectedPaymentMethod = "";
 
+
 function showPaymentForm(method, detailsHTML) {
-  // Exibe o contêiner de pagamento
   const paymentContainer = document.getElementById("payment-container");
   paymentContainer.style.display = "block";
 
-  // Atualiza o método selecionado
   const paymentMethodTitle = document.getElementById("payment-method");
   paymentMethodTitle.textContent = `Método Selecionado: ${method}`;
 
-  // Adiciona os detalhes específicos do método
   const paymentDetails = document.getElementById("payment-details");
   paymentDetails.innerHTML = detailsHTML;
 
-  // Salva o método selecionado
   selectedPaymentMethod = method;
 }
 
-window.onload = function() {
-  const totalItens = localStorage.getItem("totalItens");
-  const totalValor = localStorage.getItem("totalValor");
-  const cartaz = localStorage.getItem("cartaz");
-  const descricao = localStorage.getItem("descricao");
+// Função genérica para validar entrada de texto
+function validateInput(id, regex, errorMsg) {
+    const input = document.getElementById(id);
+    if (!input || !regex.test(input.value.trim())) {
+        alert(errorMsg);
+        input.focus();
+        return false;
+    }
+    return true;
+}
 
-  if (totalItens && totalValor) {
-      document.getElementById("detalhes").innerHTML = `
-          <p>ITENS: ${totalItens}</p>
-          <p>TOTAL: R$ ${totalValor}</p>
-      `;
-  }
-
-  // Verifica se tem dados da imagem e da descrição
-  if (cartaz) {
-      document.querySelector(".cartaz").style.backgroundImage = `url(${cartaz})`;
-  }
-  
-  if (descricao) {
-      document.querySelector(".descricao").innerHTML = `<p>${descricao}</p>`;
-  }
-};
-
+// Formulários de pagamento com validação
 function payWithCreditCard() {
   showPaymentForm(
     "Cartão de Crédito",
     `
     <label for="cc-number">Número do Cartão:</label>
     <input type="text" id="cc-number" placeholder="0000 0000 0000 0000" /><br />
+
     <label for="cc-expiration">Validade:</label>
     <input type="text" id="cc-expiration" placeholder="MM/AA" /><br />
+
     <label for="cc-cvv">CVV:</label>
     <input type="text" id="cc-cvv" placeholder="123" /><br />
     `
@@ -110,6 +98,7 @@ function payWithDebitCard() {
     `
     <label for="debit-number">Número do Cartão:</label>
     <input type="text" id="debit-number" placeholder="0000 0000 0000 0000" /><br />
+
     <label for="debit-password">Senha:</label>
     <input type="password" id="debit-password" placeholder="Senha do Cartão" /><br />
     `
@@ -122,6 +111,7 @@ function payWithNubank() {
     `
     <label for="nubank-email">E-mail da Conta Nubank:</label>
     <input type="email" id="nubank-email" placeholder="seuemail@exemplo.com" /><br />
+
     <label for="nubank-password">Senha:</label>
     <input type="password" id="nubank-password" placeholder="Senha" /><br />
     `
@@ -145,15 +135,120 @@ function payWithPix() {
     <p>Chave Pix Gerada:</p>
     <strong>123.456.789-00</strong><br />
     <p>Escaneie o QR Code com o aplicativo do seu banco:</p>
-    <img src="https://via.placeholder.com/150" alt="QR Code Pix" />
+    <img src="https://media.nbcbayarea.com/2020/10/qr-code-huge.png?resize=906,1024" alt="QR Code Pix" />
     `
   );
 }
 
-function confirmPayment() {
-  const result = document.getElementById("payment-result");
-  result.innerHTML = `<p>Pagamento realizado com sucesso pelo método: <strong>${selectedPaymentMethod}</strong>.</p>`;
-  alert("Pagamento confirmado!");
+// Função para validar os campos do formulário antes de confirmar o pagamento
+function validatePayment() {
+  if (!selectedPaymentMethod) {
+    alert("Selecione um método de pagamento antes de confirmar.");
+    return false;
+  }
+
+  switch (selectedPaymentMethod) {
+    case "Cartão de Crédito":
+      if (
+          !validateInput("cc-number", /^\d{16}$/, "Número do cartão inválido! Deve conter 16 dígitos.") ||
+          !validateInput("cc-expiration", /^(0[1-9]|1[0-2])\/\d{2}$/, "Data de validade inválida! Use o formato MM/AA.") ||
+          !validateInput("cc-cvv", /^\d{3,4}$/, "CVV inválido! Deve conter 3 ou 4 dígitos.")
+      ) return false;
+        break;
+
+    case "Cartão de Débito":
+      if (
+          !validateInput("debit-number", /^\d{16}$/, "Número do cartão inválido! Deve conter 16 dígitos.") ||
+          !validateInput("debit-password", /^.{4,}$/, "Senha inválida! Deve ter pelo menos 4 caracteres.")
+      ) return false;
+        break;
+
+    case "Nubank":
+      if (
+          !validateInput("nubank-email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/, "E-mail inválido!") ||
+          !validateInput("nubank-password", /^.{4,}$/, "Senha inválida! Deve ter pelo menos 4 caracteres.")
+      ) return false;
+        break;
+
+    case "Google Pay":
+      if (!validateInput("google-account", /^[^\s@]+@[^\s@]+\.[^\s@]+$/, "E-mail inválido!"))
+          return false;
+          break;
+
+      case "Pix":
+        // Para Pix, não há campos a validar, pois o pagamento ocorre externamente
+        break;
+
+      default:
+        alert("Método de pagamento não reconhecido.");
+        return false;
+  }
+  return true;
 }
 
+// Confirmação do pagamento com validação
+function confirmPayment() {
+  if (validatePayment()) {
+    const result = document.getElementById("payment-result");
+    result.innerHTML = `<p>Pagamento realizado com sucesso pelo método: <strong>${selectedPaymentMethod}</strong>.</p>`;
+    alert("Pagamento confirmado!");
+  }
+}
+
+window.onload = function() {
+  const totalItens = localStorage.getItem("totalItens");
+  const totalValor = localStorage.getItem("totalValor");
+  const cartaz = localStorage.getItem("cartaz");
+  const descricao = localStorage.getItem("descricao");
+
+  if (totalItens && totalValor) {
+      document.getElementById("detalhes").innerHTML = `
+          <p>ITENS: ${totalItens}</p>
+          <p>TOTAL: R$ ${totalValor}</p>
+      `;
+  }
+
+ 
+  if (cartaz) {
+      document.querySelector(".cartaz").innerHTML = `<img src="${cartaz}" alt="Cartaz do Filme" />`;
+  }
+  
+ 
+  if (descricao) {
+      document.querySelector(".descricao").innerHTML = `<p>${descricao}</p>`;
+  }
+};
+
+document.getElementById("lupa").addEventListener("click", async () => {
+  const busca = document.getElementById("barra-busca").value.trim();
+
+  if (busca === "") {
+    alert("Digite o nome do filme!");
+    return;
+  }
+
+  const url = `${API_URL}/search/movie?query=${encodeURIComponent(busca)}&language=pt-BR`;
+
+  try {
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+      throw new Error("Erro ao buscar o filme");
+    }
+
+    const data = await response.json();
+
+    if (data.results.length > 0) {
+      const filme = data.results[0];
+
+      // Aqui você deve garantir que o parâmetro seja 'movieId', não 'id'
+      window.location.href = `desc_filmes.html?movieId=${filme.id}`;
+    } else {
+      alert("Filme não encontrado!");
+    }
+  } catch (error) {
+    console.error("Erro na busca:", error);
+    alert("Erro ao buscar o filme. Tente novamente!");
+  }
+});
 
