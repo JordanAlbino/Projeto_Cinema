@@ -106,4 +106,16 @@ body{
     height: 100px;
     width: 150px;
     border-radius: 15px;
+    gap: 5px;
+}
+
+.irParaCompra{
+    border-radius: 7px;
+    width: 100px;
+    border: none;
+}
+
+.irParaCompra:hover{
+    cursor: pointer;
+    opacity: 0.9;
 }

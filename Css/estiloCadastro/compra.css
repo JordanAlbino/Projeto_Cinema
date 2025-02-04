@@ -9,7 +9,7 @@ body{
 
 .container{
     display: flex;
-    height: 100vh;
+    overflow: hidden;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 20px;
@@ -48,6 +48,10 @@ body{
     line-height: 30px;
     font-size: 14px;
     cursor: pointer;
+}
+
+.assento:hover {
+    opacity: 0.9;
 }
 
 .assento.selecionado {
@@ -104,6 +108,7 @@ body{
 } 
 
 .descricao {
+    transition: transform 0.2s ease-in-out;
     background-color: #444;
     padding: 20px;
     text-align: center;
@@ -115,6 +120,7 @@ body{
 }
 
 .voltar {
+    transition: transform 0.2s ease-in-out;
     background-color: #f44336;
     color: #fff;
     padding: 10px 20px;
@@ -124,12 +130,15 @@ body{
     margin-top: 20px; 
 }
 
-.voltar:hover {
-    background-color: #d32f2f;
+.voltar:hover, .descricao:hover, .ingresso:hover {
+    transform: scale(1.01);
+    cursor: pointer;
 }
 
+
 .ingresso{
-    background-color: #f44336;
+    background-color: #ee3527;
+    transition: transform 0.2s ease-in-out;
     color: #fff;
     padding: 10px 20px;
     border: none;

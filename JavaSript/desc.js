@@ -40,7 +40,7 @@ async function getMovieDetails(movieId) {
       sala.innerHTML = `
         <p><strong>Sala ${index + 1}</strong></p>
         <p>Horário: ${18 + index}:00</p>
-        <button onclick="irParaCompra(${movieId}, ${index + 1})">Escolher Sala</button>
+        <button onclick="irParaCompra(${movieId}, ${index + 1})" class="irParaCompra">Escolher Sala</button>
       `;
     });
   } catch (error) {
