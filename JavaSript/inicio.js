@@ -187,7 +187,7 @@ document.getElementById("lupa").addEventListener("click", async () => {
     if (data.results.length > 0) {
       const filme = data.results[0];
 
-      // Aqui você deve garantir que o parâmetro seja 'movieId', não 'id'
+      
       window.location.href = `desc_filmes.html?movieId=${filme.id}`;
     } else {
       alert("Filme não encontrado!");
@@ -196,4 +196,12 @@ document.getElementById("lupa").addEventListener("click", async () => {
     console.error("Erro na busca:", error);
     alert("Erro ao buscar o filme. Tente novamente!");
   }
+});
+
+document.querySelectorAll(".horario").forEach(horario => {
+  horario.addEventListener("click", (event) => {
+      event.preventDefault(); 
+      localStorage.setItem("horario", horario.textContent);
+      window.location.href = "PosCompra.html";
+  });
 });

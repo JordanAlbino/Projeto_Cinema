@@ -176,7 +176,7 @@ function validatePayment() {
           break;
 
       case "Pix":
-        // Para Pix, não há campos a validar, pois o pagamento ocorre externamente
+        
         break;
 
       default:
@@ -186,12 +186,17 @@ function validatePayment() {
   return true;
 }
 
-// Confirmação do pagamento com validação
+
 function confirmPayment() {
   if (validatePayment()) {
-    const result = document.getElementById("payment-result");
-    result.innerHTML = `<p>Pagamento realizado com sucesso pelo método: <strong>${selectedPaymentMethod}</strong>.</p>`;
-    alert("Pagamento confirmado!");
+      
+      localStorage.setItem("pagamento", selectedPaymentMethod);
+
+     
+      alert("Pagamento confirmado!");
+
+      
+      window.location.href = "PosCompra.html";
   }
 }
 
@@ -241,7 +246,6 @@ document.getElementById("lupa").addEventListener("click", async () => {
     if (data.results.length > 0) {
       const filme = data.results[0];
 
-      // Aqui você deve garantir que o parâmetro seja 'movieId', não 'id'
       window.location.href = `desc_filmes.html?movieId=${filme.id}`;
     } else {
       alert("Filme não encontrado!");

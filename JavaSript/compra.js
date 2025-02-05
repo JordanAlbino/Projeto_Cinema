@@ -72,6 +72,13 @@ function selecionarAssento(assento) {
 
   assento.classList.toggle("selecionado");
 
+
+  const assentosSelecionados = Array.from(document.querySelectorAll(".assento.selecionado"))
+      .map(a => a.textContent)
+      .join(", ");
+
+  localStorage.setItem("assento", assentosSelecionados); 
+
   atualizarResumo();
 }
 
@@ -120,7 +127,7 @@ document.getElementById("lupa").addEventListener("click", async () => {
     if (data.results.length > 0) {
       const filme = data.results[0];
 
-      // Aqui você deve garantir que o parâmetro seja 'movieId', não 'id'
+      
       window.location.href = `desc_filmes.html?movieId=${filme.id}`;
     } else {
       alert("Filme não encontrado!");
