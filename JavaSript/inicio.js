@@ -153,7 +153,6 @@ async function getMovieTrailer(movieId) {
       card.innerHTML = `
         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
         <h3>${movie.title}</h3>
-        <p>Data: ${movie.release_date}</p>
       `;
       cardsContainer.appendChild(card);
     });
