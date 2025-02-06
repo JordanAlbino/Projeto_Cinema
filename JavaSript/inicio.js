@@ -196,11 +196,3 @@ document.getElementById("lupa").addEventListener("click", async () => {
     alert("Erro ao buscar o filme. Tente novamente!");
   }
 });
-
-document.querySelectorAll(".horario").forEach(horario => {
-  horario.addEventListener("click", (event) => {
-      event.preventDefault(); 
-      localStorage.setItem("horario", horario.textContent);
-      window.location.href = "PosCompra.html";
-  });
-});

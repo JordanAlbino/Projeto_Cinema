@@ -1,6 +1,7 @@
 window.onload = function () {
     function getLocalStorageItem(key, defaultValue = "Não informado") {
-        return localStorage.getItem(key) || defaultValue;
+        const value = localStorage.getItem(key);
+        return value ? value : defaultValue;
     }
 
     const totalItens = getLocalStorageItem("totalItens", "0");
@@ -8,16 +9,12 @@ window.onload = function () {
     const cartaz = localStorage.getItem("cartaz"); 
     const descricao = localStorage.getItem("descricao");
     const assento = getLocalStorageItem("assento");
-    const horario = getLocalStorageItem("horario");
-    const data = getLocalStorageItem("data");
     const pagamento = getLocalStorageItem("pagamento");
 
-   
     if (!isNaN(parseFloat(totalValor))) {
         totalValor = parseFloat(totalValor).toFixed(2).replace(".", ",");
     }
 
-    
     function updateElement(selector, content) {
         const element = document.querySelector(selector);
         if (element) {
@@ -28,7 +25,6 @@ window.onload = function () {
     // Atualizando os elementos com as informações recuperadas
     updateElement(".contInfo", `
         <p><strong>Assento:</strong> ${assento}</p>
-        <p><strong>Horário:</strong> ${horario}</p>
         <p><strong>Forma de Pagamento:</strong> ${pagamento}</p>
         <p><strong>Itens:</strong> ${totalItens}</p>
         <p><strong>Total:</strong> R$ ${totalValor}</p>

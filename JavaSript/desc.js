@@ -34,13 +34,14 @@ async function getMovieDetails(movieId) {
     const descricaoDiv = document.querySelector(".descricao");
     descricaoDiv.innerHTML = `<p>${movie.overview || "Descrição não disponível."}</p>`;
 
-    // Preencher as salas com links para "Compra.html"
+    // Preencher as salas com horários e links para "Compra.html"
     const salasDivs = document.querySelectorAll(".salas > div");
     salasDivs.forEach((sala, index) => {
+      const horario = `${18 + index}:00`; // Gera um horário baseado no índice
       sala.innerHTML = `
         <p><strong>Sala ${index + 1}</strong></p>
-        <p>Horário: ${18 + index}:00</p>
-        <button onclick="irParaCompra(${movieId}, ${index + 1})" class="irParaCompra">Escolher Sala</button>
+        <p>Horário: ${horario}</p>
+        <button onclick="irParaCompra(${movieId}, ${index + 1}, '${horario}')" class="irParaCompra">Escolher Sala</button>
       `;
     });
   } catch (error) {
@@ -48,19 +49,19 @@ async function getMovieDetails(movieId) {
   }
 }
 
-// Função para redirecionar para a página de compra
-function irParaCompra(movieId, salaId) {
-  const url = `compra.html?movieId=${movieId}&salaId=${salaId}`;
-  window.location.href = url;
+// Função para redirecionar para a página de compra e salvar o horário
+function irParaCompra(movieId, salaId, horario) {
+  localStorage.setItem("horario", horario); // Armazena o horário escolhido
+  window.location.href = `compra.html?movieId=${movieId}&salaId=${salaId}`;
 }
 
-// Função para recuperar o ID do filme da URL
+// Recupera o ID do filme da URL
 function getMovieIdFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("movieId");
 }
 
-// Função para o botão de voltar
+// Botão de voltar
 document.querySelector(".back").addEventListener("click", () => {
   window.history.back();
 });
