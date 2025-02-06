@@ -40,3 +40,13 @@ window.onload = function () {
         updateElement(".contDesc", `<p>${descricao}</p>`);
     }
 };
+
+function baixarIngresso() {
+    const ingresso = document.querySelector(".contInfo");
+    html2canvas(ingresso).then(canvas => {
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "meu_ingresso.png";
+        link.click();
+    });
+}
