@@ -40,6 +40,9 @@ body{
     top:25px;
     left: 40px;
     width: 120px;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
 }
 
 #payment-options{
@@ -51,9 +54,10 @@ body{
     background-color: rgb(100, 103, 105);
     border-radius: 10px;
     width: 600px;
-    height: 400px;
+    height: 500px;
     position: relative;
     top: 25px;
+    overflow: hidden;
 }
 
 #Inteira{
@@ -192,6 +196,7 @@ body{
     color:#fff;
     top: -50px;
 }
+
 /* 
 .botaoConfirmar{
     border: none;
