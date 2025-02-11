@@ -189,14 +189,18 @@ function validatePayment() {
 
 function confirmPayment() {
   if (validatePayment()) {
-      
       localStorage.setItem("pagamento", selectedPaymentMethod);
 
-     
-      alert("Pagamento confirmado!");
-
-      
-      window.location.href = "PosCompra.html";
+      Swal.fire({
+          title: "Pagamento confirmado!",
+          text: "Seu pagamento foi processado com sucesso.",
+          icon: "success",
+          confirmButtonText: "OK",
+          width: "400px",
+          heightAuto: false
+      }).then(() => {
+          window.location.href = "PosCompra.html";
+      });
   }
 }
 
