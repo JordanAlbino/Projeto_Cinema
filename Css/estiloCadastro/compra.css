@@ -1,6 +1,7 @@
 main{
     height: 1050px;
-    background-color: #8b0b1c
+    background-color: #8b0b1c;
+    overflow: hidden;
 }
 
 body{ 
