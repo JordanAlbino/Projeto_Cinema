@@ -132,13 +132,16 @@ function payWithPix() {
   showPaymentForm(
     "Pix",
     `
-    <p>Chave Pix Gerada:</p>
-    <strong>123.456.789-00</strong><br />
-    <p>Escaneie o QR Code com o aplicativo do seu banco:</p>
-    <img src="https://media.nbcbayarea.com/2020/10/qr-code-huge.png?resize=906,1024" alt="QR Code Pix" />
+    <div id="pix-container">
+      <p class="pix-text">Chave Pix Gerada:</p>
+      <strong class="pix-key">123.456.789-00</strong><br />
+      <p class="pix-text">Escaneie o QR Code com o aplicativo do seu banco:</p>
+      <img id="pix-qr"  src="../imagens/qrCode.jpeg" alt="QR Code Pix" />
+    </div>
     `
   );
 }
+
 
 // Função para validar os campos do formulário antes de confirmar o pagamento
 function validatePayment() {

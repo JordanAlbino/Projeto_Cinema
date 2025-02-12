@@ -9,17 +9,14 @@ const options = {
   },
 };
 
-// Função para carregar informações do filme
 async function carregarDetalhes(movieId) {
   try {
     const response = await fetch(`${API_URL}/movie/${movieId}?language=pt-BR`, options);
     const movie = await response.json();
 
-    // Preencher o cartaz
     const cartazDiv = document.querySelector(".cartaz");
     cartazDiv.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />`;
 
-    // Preencher a descrição
     const descricaoDiv = document.querySelector(".descricao");
     descricaoDiv.innerHTML = `<p>${movie.overview || "Descrição não disponível."}</p>`;
   } catch (error) {
@@ -27,7 +24,6 @@ async function carregarDetalhes(movieId) {
   }
 }
 
-// Função para recuperar os parâmetros da URL
 function getParamsFromURL() {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -36,7 +32,6 @@ function getParamsFromURL() {
   };
 }
 
-// Função para inicializar a página
 function inicializar() {
   const { movieId, salaId } = getParamsFromURL();
   if (movieId) {
@@ -45,7 +40,6 @@ function inicializar() {
     console.error("ID do filme não encontrado na URL.");
   }
 
-  // Exibir o número da sala
   if (salaId) {
     document.querySelector(".detalhes").innerHTML += `<p>Sala Selecionada: ${salaId}</p>`;
   }
@@ -53,8 +47,6 @@ function inicializar() {
 
 inicializar();
 
-
-// Função para gerar assentos dinamicamente
 const assentosContainer = document.querySelector(".assentos");
 
 function gerarAssentos() {
@@ -67,24 +59,23 @@ function gerarAssentos() {
   }
 }
 
+gerarAssentos();
+
 function selecionarAssento(assento) {
   if (assento.classList.contains("ocupado")) return;
 
   assento.classList.toggle("selecionado");
 
-
   const assentosSelecionados = Array.from(document.querySelectorAll(".assento.selecionado"))
-      .map(a => a.textContent)
-      .join(", ");
+    .map(a => a.textContent)
+    .join(", ");
 
-  localStorage.setItem("assento", assentosSelecionados); 
-
+  localStorage.setItem("assento", assentosSelecionados);
   atualizarResumo();
 }
 
 function atualizarResumo() {
   const selecionados = document.querySelectorAll(".assento.selecionado").length;
-
   document.getElementById("itens").textContent = selecionados;
 }
 
@@ -92,16 +83,22 @@ function voltar() {
   window.history.back();
 }
 
-gerarAssentos();
-
 function redirecionarParaIngressos() {
   const params = new URLSearchParams(window.location.search);
   const movieId = params.get("movieId");
   const salaId = params.get("salaId");
+  
+  const assentosSelecionados = document.querySelectorAll(".assento.selecionado");
+  
+  if (assentosSelecionados.length === 0) {
+    alert("Por favor, selecione pelo menos um assento antes de prosseguir!");
+    return;
+  }
+  
   if (movieId && salaId) {
-      window.location.href = `ingresso.html?movieId=${movieId}&salaId=${salaId}`;
+    window.location.href = `ingresso.html?movieId=${movieId}&salaId=${salaId}`;
   } else {
-      console.error("Parâmetros de filme ou sala não encontrados!");
+    console.error("Parâmetros de filme ou sala não encontrados!");
   }
 }
 
@@ -126,8 +123,6 @@ document.getElementById("lupa").addEventListener("click", async () => {
 
     if (data.results.length > 0) {
       const filme = data.results[0];
-
-      
       window.location.href = `desc_filmes.html?movieId=${filme.id}`;
     } else {
       alert("Filme não encontrado!");
@@ -137,4 +132,3 @@ document.getElementById("lupa").addEventListener("click", async () => {
     alert("Erro ao buscar o filme. Tente novamente!");
   }
 });
-
